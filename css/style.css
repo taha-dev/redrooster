@@ -1,0 +1,385 @@
+body {
+  margin: 0;
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+}
+.navbar
+{
+	padding:10px 20px;
+	background-color: #f7f7f7;
+	overflow: hidden;
+}
+.nav-menu ul
+{
+	list-style: none;
+	margin-top: 0px;
+}
+.nav-menu ul li
+{
+	float: right;
+	padding:25px 10px;
+}
+.nav-menu a:hover
+{
+	background-color: #000;
+	color: #fff;
+}
+.nav-brand
+{
+	padding-top: 10px;
+	display: inline-block;
+	width: 70px;
+	height: 60px;
+}
+.nav-brand img
+{
+	width: 100%;
+	height: 100%;
+}
+.nav-menu {
+  overflow: hidden;
+  display: inline-block;
+  float: right;
+}
+
+.nav-menu a {
+  padding: 10px; 
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+}
+.nav-menu .cart-ic
+{
+	font-size: 22px;
+}
+
+.nav-btn {
+  display: none;
+  padding-top: 10px;
+}
+.nav-btn button
+{
+	background-color: transparent;
+    border:none;
+    font-size: 30px;
+}
+.footer
+{
+	width: 100%;
+	background-color: #f7f7f7;
+	overflow: hidden;
+	bottom: 0;
+	left: 0;
+}
+.footer_1
+{
+	padding: 10px 0;
+	text-align: center;
+}
+.footer_2, .footer_3, .footer_4, .footer_5
+{
+	padding: 10px 0;
+	width: 24%;
+	display: list-item;
+	float: left;
+	list-style: none;
+	text-align: center;
+}
+.footer_bottom
+{
+	text-align: center;
+}
+.footer_bottom hr
+{
+	width: 80%;
+	height: 1px;
+	background-color: #e3e3e3;
+	border: none;
+}
+.brand-logo
+{
+	text-align: center;
+	padding-top: 20px;
+	width: 150px;
+	display: inline-block;
+}
+
+.nav-text p a
+{
+	text-decoration: none;
+	color: #000;
+}
+.brand-logo img
+{
+	width: 100%;
+}
+.container
+{
+	width: 100%;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.container .card
+{
+	width: 24%;
+	display: inline-block;
+}
+.card-content
+{
+	padding: 20px;
+}
+.col
+{
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding-bottom: 15px;
+}
+.col img
+{
+	width: 100%;
+	height: 300px;
+}
+.price
+{
+	font-weight: bold;
+	font-size: 18px;
+}
+.dropdown:hover .dropdown-content
+{
+	display: block;
+}
+.dropdown-content
+{
+	display: none;
+	position: absolute;
+	z-index: 1;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	margin-top: 10px;
+	min-width: 200px;
+	background-color: #fff;
+}
+.dropdown-content .cart-divider
+{
+	text-align: center;
+	margin: 0px 5px;
+	border: none;
+	height: 1px;
+	background-color: #e3e3e3;
+}
+.ch_price
+{
+	float: right;
+}
+.checkout-divider
+{
+	margin: 0px 5px;
+	border: none;
+	height: 1px;
+	background-color: #e3e3e3;
+}
+.checkout-btn-cart
+{
+	text-align: center;
+	font-weight: bolder;
+	padding: 10px 0px;
+}
+.checkout-btn-cart button
+{
+	font-weight: bolder;
+    background-color: #E21E2D;
+    color: #ffffff;
+    border: 2px solid #E21E2D;
+    padding: 10px;
+    outline: none;
+}
+.checkout-btn-cart button:hover
+{
+	border: 2px dashed;
+    color: #E21E2D;
+    background-color: #fff;
+    cursor: pointer;
+}
+.cart-items, .checkout-items
+{
+	padding: 5px;
+}
+.cart-items p, .checkout-items p
+{
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+.cart-items img, .cart-items p, .checkout-items img,.checkout-items p
+{
+	display: inline-block;
+}
+.cart-items img, .checkout-items img
+{
+	width: 50px;
+}
+.checkout-items
+{
+	text-align: left;
+}
+.cart-btn
+{
+	font-weight: bolder;
+	background-color: #E21E2D;
+	color: #ffffff;
+	border: 2px solid #E21E2D;
+	padding: 10px;
+}
+.cart-btn:hover
+{
+	border: 2px dashed;
+	color: #E21E2D;
+	background-color: #fff;
+	cursor: pointer;
+}
+.container .login-card, .container .signup-card, .container .upload-card
+{
+	width: 30%;
+	margin: auto;
+	background-color: #fff;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 10px 0;
+}
+.container .checkout-card
+{
+	width: 70%;
+	margin: auto;
+	background-color: #fff;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 10px 0;
+}
+.login-card h1, .signup-card h1, .checkout-card h1, .upload-card h1
+{
+	color: #E21E2D;
+}
+.login-card form input, .signup-card form input, .checkout-card form input, .upload-card form input:nth-child(-n + 3)
+{
+	margin: 10px 0;
+	font-size: 16px;
+	padding: 5px;
+}
+.login-card form input:not(:last-child), .signup-card form input:not(:last-child), .checkout-card form input:not(:last-child)
+{
+	border: 0;
+	border-bottom: 1px solid #000;
+	outline: none;
+}
+.upload-card form input:nth-child(-n + 3)
+{
+	border: 0;
+	border-bottom: 1px solid #000;
+}
+.upload-card form input
+{
+	outline: none;
+}
+.login-card form .login-btn, .signup-card form .signup-btn, .checkout-card form .checkout-btn, .upload-card form .upload-btn, .logout-btn
+{
+	font-weight: bolder;
+	background-color: #fff;
+	color: #E21E2D;
+	border: 2px solid #E21E2D;
+	padding: 10px;
+}
+.login-card form .login-btn:hover, .signup-card form .signup-btn:hover, .checkout-card form .checkout-btn:hover,  .upload-card form .upload-btn:hover, .logout-btn:hover
+{
+	color: #ffffff;
+	background-color: #E21E2D;
+	cursor: pointer;
+}
+.upload-card .img-upload
+{
+	margin: 15px 5px;
+}
+.container .col-6
+{
+	width: 49%;
+	display: inline-block;
+	vertical-align: top;
+}
+.total
+{
+	color: #E21E2D;
+}
+@media screen and (max-width: 600px) 
+{
+  .nav-menu a, .nav-menu i {display: none;}
+  .nav-btn {
+    float: right;
+    display: inline-block;
+  }
+  .nav-brand
+  {
+  	padding-top: 0px;
+  }
+  .nav-menu ul
+  {
+  	padding: 0px;
+  }
+  .footer_2, .footer_3, .footer_4, .footer_5
+  {
+  	width: 50%;
+  }
+  .brand-logo
+  {
+  	padding: 0px;
+  }
+  .brand-logo img
+  {
+	width: 50%;
+  }
+  .container .card
+{
+	width: 100%;
+	display: block;
+}
+.dropdown-content
+{
+	position: relative;
+}
+}
+@media screen and (max-width: 600px)
+{
+  .nav-menu.responsive 
+  {
+  	position: relative;
+  	width: 100%;
+  	float: none;
+  	margin-top: 10px;
+  }
+  .nav-menu ul li
+  {
+  	float: none;
+  	padding: 0px;
+  }
+  .nav-menu.responsive a, .nav-menu.responsive i
+  {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+@media screen and (max-width: 1300px)
+{
+	.container .col-6
+	{
+		width: 100%;
+		display: block;
+	}
+	.container .login-card, .container .signup-card, .container .checkout-card
+{
+	width: 50%;
+}
+}
+@media screen and (max-width: 800px)
+{
+	.container .login-card, .container .signup-card, .container .checkout-card
+{
+	width: 80%;
+}
+}
