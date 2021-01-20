@@ -5,12 +5,15 @@
 		$mail = $_POST["mail"];
 		$pass = $_POST["pass"];
 		$pass = md5($pass);
-		$sql = "SELECT email, password FROM users WHERE email = '$mail' AND password = '$pass'";
+		$sql = "SELECT id, email, password, role FROM users WHERE email = '$mail' AND password = '$pass'";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0)
 		{
 			$_SESSION["email"] = $mail;
 			$_SESSION["pass"] = $pass;
+			$row = $result->fetch_assoc();
+			$_SESSION["role"] = $row["role"];
+			$_SESSION["id"] = $row["id"];
 			header("location:dashboard.php");
 		}
 		else

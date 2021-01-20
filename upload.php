@@ -1,20 +1,31 @@
 <?php
 	include "layouts/header.php";
+	if ($_SESSION["email"] == "" || $_SESSION["pass"] == "")
+	{
+		header("location:login.php");
+	}
+	if ($_SESSION["role"] != "admin") {
+		header("location:error.php");
+	}
 	if (isset($_POST["submit"])) 
 	{
 		$name = $_POST["name"];
 		$price = $_POST["price"];
 		$cat = $_POST["cat"];
- 		$target_dir = "img/products/".$cat;
+ 		$target_dir = "img/products/".$cat."/";
  		$filename = $_FILES["imgToUpload"]["name"];
 		$target_file = $target_dir . $filename;
 		$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-		echo "Name: ".$name."<br>";
-		echo "Price: ".$price."<br>";
-		echo "Category: ".$cat."<br>";
-		echo "FileName: ".$filename."<br>";
-		echo "Directory: ".$target_dir."<br>";
-		echo "path: ".$target_dir."/".$cat."/".$filename."<br>";
+		$path = $target_dir."".$filename;
+		$sql = "INSERT INTO products(name, price, img, category) VALUES ('$name', '$price', '$path', '$cat')";
+		if(move_uploaded_file($_FILES["imgToUpload"]["tmp_name"], $target_file) && $conn->query($sql) === TRUE)
+		{
+			echo "uploaded";
+		}
+		else
+		{
+			echo "Error";
+		}
 	}
 
 ?>

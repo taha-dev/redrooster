@@ -22,21 +22,8 @@ include "connection.php";
 		<li><a href="#">News</a></li>
 		<li><a href="#">Contact</a></li>
 		<li><a href="#">About</a></li>
-		<li class="dropdown"><i class="fa fa-shopping-cart cart-ic"></i>
-			<div class="dropdown-content">
-    <div class="cart-items">
-    	<img src="img/xs.png">
-    	<p> VALUE BUCKET</p>
-    </div>
-    <hr class="cart-divider">
-    <div class="cart-items">
-    	<img src="img/xs.png">
-    	<p> VALUE BUCKET</p>
-    </div>
-    <hr class="cart-divider">
-    <div class="checkout-btn-cart">
-    	<button onclick="gotocheckout()">CHECKOUT</button>
-    </div>
+		<li class="dropdown"><i class="fa fa-shopping-cart cart-ic" onmouseover="getcart()"></i>
+			<div class="dropdown-content" id="dropdown-content">
   </div>
 		</li>
 	</ul>
