@@ -42,6 +42,7 @@
   <option value="chicken_combos">CHICKEN COMBOS</option>
   <option value="boxes">BOXES</option>
   <option value="BR&W">BURGERS, ROLLS & WRAPS</option>
+  <option value="desserts">DESSERTS</option>
 </select>
 <br>
 	Select image to upload:

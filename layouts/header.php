@@ -1,5 +1,17 @@
 <?php
 include "connection.php";
+$num = 0;
+function cartbadge($conn) {
+    if (session_status() != PHP_SESSION_NONE) {
+ $uid = $_SESSION["id"];
+$sql = "SELECT COUNT(id) AS NumberOfProducts FROM cart WHERE user='$uid'";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+$num = $row["NumberOfProducts"]; 
+return $num;
+    }
+    return 0;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +34,7 @@ include "connection.php";
 		<li><a href="#">Contact</a></li>
 		<li><a href="dashboard.php">Dashboard</a></li>
         <li><a href="index.php">Home</a></li>
-		<li class="dropdown"><i class="fa fa-shopping-cart cart-ic" onmouseover="getcart()"></i>
+		<li class="dropdown"><i class="fa fa-shopping-cart cart-ic" onmouseover="getcart()"></i><sup><?php echo cartbadge($conn);?></sup>
 			<div class="dropdown-content" id="dropdown-content">
   </div>
 		</li>

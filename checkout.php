@@ -2,6 +2,36 @@
 	include "layouts/header.php";
 	$total = 0;
 $user = $_SESSION["id"];
+if (isset($_GET["id"]) && isset($_GET["act"])) {
+	$id = $_GET["id"];
+	$act = strval($_GET["act"]);
+	$sql = "SELECT qty FROM cart WHERE id='$id'";
+	$result = $conn->query($sql);
+	$row = $result->fetch_assoc();
+	$qty = $row["qty"];
+	if ($act === 'sub') {
+		if ($qty > 1) 
+		{
+			$qty--;
+			$sql1 = "UPDATE cart SET qty='$qty' WHERE id='$id'";
+			$conn->query($sql1);
+			header("location:checkout.php");
+		}
+	}
+	else if($act === 'add')
+	{
+		$qty++;
+		$sql2 = "UPDATE cart SET qty='$qty' WHERE id='$id'";
+		$conn->query($sql2);
+		header("location:checkout.php");
+	}
+	else
+	{
+		$sql3 = "DELETE FROM cart WHERE id='$id'";
+		$conn->query($sql3);
+		header("location:checkout.php");
+	}
+}
 if(isset($_POST["submit"]))
 {
 	$sql2 = "SELECT product, qty FROM cart WHERE user='$user'";
@@ -54,6 +84,7 @@ if ($result->num_rows > 0) {
     	<img src="<?php echo $row1['img']?>">
     	<p> <?php echo $row1["name"]; ?> x <?php echo $row["qty"];?></p>
     	<p class="ch_price">PKR <?php echo $row1["price"]*$row["qty"]; ?></p>
+    	<p class="act-btns"><span><a href="checkout.php?id=<?php echo  $row['id']?>&act=add">+</a></span><span><a href="checkout.php?id=<?php echo  $row['id']?>&act=sub">-</a></span><span><a href="checkout.php?id=<?php echo $row['id']?>&act=x">x</a></span></p>
     </div>
     <hr class="checkout-divider">
     <?php
@@ -61,7 +92,6 @@ if ($result->num_rows > 0) {
       }
     ?>
     <h1 class="total">YOUR TOTAL: PKR <?php echo $total; ?></h1>
-		</div>
 </div>
 <?php
       }
