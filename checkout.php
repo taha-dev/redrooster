@@ -51,6 +51,7 @@ $phone = $_POST["phone"];
 $address = $_POST["address"];
 $sql5 = "INSERT INTO order_details (user, fname, lname, email, phone, address) VALUES ('$user', '$fname', '$lname', '$mail', '$phone', '$address')";
 $conn->query($sql5);
+header("location:checkout.php");
 }
 $sql = "SELECT * FROM cart WHERE user='$user'";
 $result = $conn->query($sql);
@@ -84,7 +85,7 @@ if ($result->num_rows > 0) {
     	<img src="<?php echo $row1['img']?>">
     	<p> <?php echo $row1["name"]; ?> x <?php echo $row["qty"];?></p>
     	<p class="ch_price">PKR <?php echo $row1["price"]*$row["qty"]; ?></p>
-    	<p class="act-btns"><span><a href="checkout.php?id=<?php echo  $row['id']?>&act=add">+</a></span><span><a href="checkout.php?id=<?php echo  $row['id']?>&act=sub">-</a></span><span><a href="checkout.php?id=<?php echo $row['id']?>&act=x">x</a></span></p>
+    	<p class="act-btns"><a href="checkout.php?id=<?php echo  $row['id']?>&act=add"><button>+</button></a><a href="checkout.php?id=<?php echo  $row['id']?>&act=sub"><button>-</button></a><a href="checkout.php?id=<?php echo $row['id']?>&act=x"><button>x</button></a></p>
     </div>
     <hr class="checkout-divider">
     <?php

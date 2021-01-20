@@ -6,7 +6,7 @@ body {
 .navbar
 {
 	padding:10px 20px;
-	background-color: #f7f7f7;
+	background-color: #1a1818;
 	overflow: hidden;
 }
 .nav-menu ul
@@ -21,7 +21,6 @@ body {
 }
 .nav-menu a:hover
 {
-	background-color: #000;
 	color: #fff;
 }
 .nav-brand
@@ -46,14 +45,18 @@ body {
   padding: 10px; 
   text-align: center;
   text-decoration: none;
-  color: #000;
+  color: #c4c4c4;
   font-size: 16px;
 }
 .nav-menu .cart-ic
 {
+	color: #c4c4c4;
 	font-size: 22px;
 }
-
+.nav-menu .cart-ic:hover
+{
+	color: #fff;
+}
 .nav-btn {
   display: none;
   padding-top: 10px;
@@ -63,11 +66,16 @@ body {
 	background-color: transparent;
     border:none;
     font-size: 30px;
+    outline: none;
+}
+.nav-btn button i
+{
+	color: #fff;
 }
 .footer
 {
 	width: 100%;
-	background-color: #f7f7f7;
+	background-color: #1a1818;
 	overflow: hidden;
 	bottom: 0;
 	left: 0;
@@ -94,8 +102,12 @@ body {
 {
 	width: 80%;
 	height: 1px;
-	background-color: #e3e3e3;
+	background-color: #fff;
 	border: none;
+}
+.footer_bottom p
+{
+	color: #fff;
 }
 .brand-logo
 {
@@ -105,10 +117,10 @@ body {
 	display: inline-block;
 }
 
-.nav-text p a
+.nav-text p a, .nav-text h3, .nav-text p
 {
 	text-decoration: none;
-	color: #000;
+	color: #fff;
 }
 .brand-logo img
 {
@@ -120,6 +132,18 @@ body {
 	text-align: center;
 	padding-top: 20px;
 	padding-bottom: 20px;
+}
+.container .cat_head
+{
+	color: #000;
+	margin-bottom: 5px;
+}
+.container .cat_hr
+{
+	width: 10%;
+	height: 2px;
+	background-color: #E21E2D;
+	border: 0;
 }
 .container .card
 {
@@ -171,7 +195,17 @@ body {
 {
 	float: right;
 }
-.act-btns span, .act-btns
+.act-btns button
+{
+	border: 0;
+	background-color: red;
+	color: #fff;
+	padding: 2px 10px;
+	cursor: pointer;
+	outline: none;
+}
+
+.act-btns button, .act-btns
 {
 	margin-left: 5px;
 	margin-right: 5px;
@@ -314,7 +348,8 @@ body {
 }
 .dash_table
 {
-	width: 100%;
+	margin: auto;
+	width: 70%;
 }
 .dash_table th
 {
@@ -335,7 +370,7 @@ body {
 }
 @media screen and (max-width: 600px) 
 {
-  .nav-menu a, .nav-menu i {display: none;}
+  .nav-menu a, .nav-menu i, .nav-menu sup {display: none;}
   .nav-btn {
     float: right;
     display: inline-block;
@@ -384,11 +419,21 @@ body {
   	float: none;
   	padding: 0px;
   }
-  .nav-menu.responsive a, .nav-menu.responsive i
+  .nav-menu.responsive a
   {
     float: none;
     display: block;
     text-align: left;
+  }
+  .nav-menu.responsive i,.nav-menu.responsive sup
+  {
+  	float: none;
+    display: inline-block;
+    text-align: left;
+  }
+  .dash_table
+  {
+  	width: 100%;
   }
 }
 @media screen and (max-width: 1300px)

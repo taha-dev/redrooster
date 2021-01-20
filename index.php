@@ -26,28 +26,13 @@
 		}
 	}
 	$categories = array("shared_meals", "chicken_combos", "boxes", "BR&W", "desserts");
+	$cat_head = array("SHARED MEALS", "CHICKEN COMBOS", "BOXES", "BURGERS, ROLLS & WRAPS", "DESSERTS");
 	?>
 <div class="container">
 	<?php
 	for ($i=0; $i < 5; $i++) { 
-	if ($i == 0) {
-		echo "<h1>SHARED MEALS</h1>";
-	}
-	elseif ($i == 1) {
-		echo "<h1>CHICKEN COMBOS</h1>";
-	}
-	elseif ($i == 2)
-	{
-		echo "<h1>BOXES</h1>";
-	}
-	elseif($i == 3)
-	{
-		echo "<h1>BURGERS, ROLLS & WRAPS</h1>";
-	}
-	elseif($i == 4)
-	{
-		echo "<h1>DESSERTS</h1>";
-	}
+		echo '<h1 class="cat_head">'.$cat_head[$i].'</h1>';
+		echo '<hr class="cat_hr">';
 	$sql = "SELECT * FROM products WHERE category='$categories[$i]'";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
