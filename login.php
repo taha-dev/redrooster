@@ -14,7 +14,7 @@
 			$row = $result->fetch_assoc();
 			$_SESSION["role"] = $row["role"];
 			$_SESSION["id"] = $row["id"];
-			header("location:dashboard.php");
+			header("location:index.php");
 		}
 		else
 		{

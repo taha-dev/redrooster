@@ -18,10 +18,10 @@ include "connection.php";
 </div>
 <div class="nav-menu" id="mynav-menu">
 	<ul>
-		<li><a href="#">Home</a></li>
-		<li><a href="#">News</a></li>
+		<li><a href="#">About Us</a></li>
 		<li><a href="#">Contact</a></li>
-		<li><a href="#">About</a></li>
+		<li><a href="dashboard.php">Dashboard</a></li>
+        <li><a href="index.php">Home</a></li>
 		<li class="dropdown"><i class="fa fa-shopping-cart cart-ic" onmouseover="getcart()"></i>
 			<div class="dropdown-content" id="dropdown-content">
   </div>

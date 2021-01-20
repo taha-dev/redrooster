@@ -1,5 +1,31 @@
 <?php
 	include "layouts/header.php";
+	$total = 0;
+$user = $_SESSION["id"];
+if(isset($_POST["submit"]))
+{
+	$sql2 = "SELECT product, qty FROM cart WHERE user='$user'";
+	$result2 = $conn->query($sq2);
+	while($row2 = $result2->fetch_assoc()) {
+		$product = $row2["product"];
+		$qty = $row2["qty"];
+	$sql3 = "INSERT INTO orders (user, product, qty) VALUES ('$user', '$product', '$qty')";
+	$conn->query($sql3);
+}
+$sql4 = "DELETE FROM cart WHERE user='$user'";
+$conn->query($sql4);
+$fname = $_POST["fname"];
+$lname = $_POST["lname"];
+$mail = $_POST["mail"];
+$phone = $_POST["phone"];
+$address = $_POST["address"];
+$sql5 = "INSERT INTO order_details (user, fname, lname, email, phone, address) VALUES ('$user', '$fname', '$lname', '$email', '$phone', '$address')";
+$conn->query($sql5);
+}
+$sql = "SELECT * FROM cart WHERE user='$user'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+  
 ?>
 	<div class="container">
 		<div class="col-6">
@@ -7,31 +33,45 @@
 				<h1>Checkout</h1>
 				<p>Enter the details and submit to checkout</p>
 				<form>
-					<input type="name" name="fname" placeholder="First Name" required="required"><br>
-					<input type="name" name="lname" placeholder="Last Name" required="required"><br>
+					<input type="name" name="fname" placeholder="First Name" required="required" maxlength="50"><br>
+					<input type="name" name="lname" placeholder="Last Name" required="required" maxlength="50"><br>
 					<input type="email" name="mail" placeholder="E-mail" required="required"><br>
-					<input type="phone" name="phone" placeholder="Phone Number" required="required"><br>
+					<input type="number" name="phone" placeholder="Phone Number" required="required" minlength="11" maxlength="13"><br>
 					<input type="address" name="address" placeholder="Address" required="required"><br>
 					<input class="checkout-btn" type="submit" name="submit" value="CHECKOUT">
 				</form>
 			</div>
 		</div>
 		<div class="col-6">
+			<?php
+			while($row = $result->fetch_assoc()) {
+  	$product = $row["product"];
+  	$sql1 = "SELECT name, img, price FROM products WHERE id='$product'";
+  	$result1 = $conn->query($sql1);
+  	$row1 = $result1->fetch_assoc();
+			?>
 			<div class="checkout-items">
-    	<img src="img/xs.png">
-    	<p> VALUE BUCKET</p>
-    	<p class="ch_price">PKR 1,250</p>
+    	<img src="<?php echo $row1['img']?>">
+    	<p> <?php echo $row1["name"]; ?> x <?php echo $row["qty"];?></p>
+    	<p class="ch_price">PKR <?php echo $row1["price"]*$row["qty"]; ?></p>
     </div>
     <hr class="checkout-divider">
-    <div class="checkout-items">
-    	<img src="img/xs.png">
-    	<p> VALUE BUCKET</p>
-    	<p class="ch_price">PKR 1,250</p>
-    </div>
-    <hr class="checkout-divider">
-    <h1 class="total">YOUR TOTAL: PKR 2500</h1>
+    <?php
+    $total += $row1["price"]*$row["qty"];
+      }
+    ?>
+    <h1 class="total">YOUR TOTAL: PKR <?php echo $total; ?></h1>
 		</div>
 </div>
+<?php
+      }
+      else
+      {
+    ?>
+<div class="container">
+	<h1>NO ITEMS IN THE CART!</h1>
+</div>
 	<?php
+}
 	include "layouts/footer.php";
 	?>
