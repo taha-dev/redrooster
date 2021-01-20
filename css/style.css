@@ -307,6 +307,20 @@ body {
 {
 	color: #E21E2D;
 }
+.dash_table
+{
+	width: 100%;
+}
+.dash_table th
+{
+	background-color: #000;
+	color: #fff;
+}
+.dash_table img
+{
+	width: 50px;
+	height: 50px;
+}
 @media screen and (max-width: 600px) 
 {
   .nav-menu a, .nav-menu i {display: none;}

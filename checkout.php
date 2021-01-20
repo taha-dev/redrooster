@@ -5,7 +5,7 @@ $user = $_SESSION["id"];
 if(isset($_POST["submit"]))
 {
 	$sql2 = "SELECT product, qty FROM cart WHERE user='$user'";
-	$result2 = $conn->query($sq2);
+	$result2 = $conn->query($sql2);
 	while($row2 = $result2->fetch_assoc()) {
 		$product = $row2["product"];
 		$qty = $row2["qty"];
@@ -19,7 +19,7 @@ $lname = $_POST["lname"];
 $mail = $_POST["mail"];
 $phone = $_POST["phone"];
 $address = $_POST["address"];
-$sql5 = "INSERT INTO order_details (user, fname, lname, email, phone, address) VALUES ('$user', '$fname', '$lname', '$email', '$phone', '$address')";
+$sql5 = "INSERT INTO order_details (user, fname, lname, email, phone, address) VALUES ('$user', '$fname', '$lname', '$mail', '$phone', '$address')";
 $conn->query($sql5);
 }
 $sql = "SELECT * FROM cart WHERE user='$user'";
@@ -32,7 +32,7 @@ if ($result->num_rows > 0) {
 			<div class="checkout-card">
 				<h1>Checkout</h1>
 				<p>Enter the details and submit to checkout</p>
-				<form>
+				<form method="post">
 					<input type="name" name="fname" placeholder="First Name" required="required" maxlength="50"><br>
 					<input type="name" name="lname" placeholder="Last Name" required="required" maxlength="50"><br>
 					<input type="email" name="mail" placeholder="E-mail" required="required"><br>

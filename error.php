@@ -1,9 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Error</title>
-</head>
-<body>
+<?php
+	include "layouts/header.php";
+	?>
+	<div class="container">
 <h1>404 Page Not Found!</h1>
+</div>
+<?php
+	include "layouts/footer.php";
+	?>
 </body>
 </html>
