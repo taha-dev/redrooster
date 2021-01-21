@@ -133,6 +133,26 @@ body {
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
+.container-banner
+{
+	width: 100%;
+	text-align: center;
+}
+.container-banner .banner
+{
+	overflow: hidden;
+}
+.container-banner .banner img
+{
+	width: 100%;
+	transform: scale(0.8);
+	transition: transform .2s;
+	
+}
+.container-banner .banner img:hover
+{
+	transform: scale(1.1);
+}
 .container .cat_head
 {
 	color: #000;
@@ -277,7 +297,7 @@ body {
 	background-color: #fff;
 	cursor: pointer;
 }
-.container .login-card, .container .signup-card, .container .upload-card
+.container .login-card, .container .signup-card, .container .upload-card, .container .contact-card
 {
 	width: 30%;
 	margin: auto;
@@ -293,17 +313,17 @@ body {
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	padding: 10px 0;
 }
-.login-card h1, .signup-card h1, .checkout-card h1, .upload-card h1
+.login-card h1, .signup-card h1, .checkout-card h1, .upload-card h1, .contact-card h1
 {
 	color: #E21E2D;
 }
-.login-card form input, .signup-card form input, .checkout-card form input, .upload-card form input:nth-child(-n + 3)
+.login-card form input, .signup-card form input, .checkout-card form input, .contact-card form input, .upload-card form input:nth-child(-n + 3)
 {
 	margin: 10px 0;
 	font-size: 16px;
 	padding: 5px;
 }
-.login-card form input:not(:last-child), .signup-card form input:not(:last-child), .checkout-card form input:not(:last-child)
+.login-card form input:not(:last-child), .signup-card form input:not(:last-child), .checkout-card form input:not(:last-child), .contact-card form input:not(:last-child)
 {
 	border: 0;
 	border-bottom: 1px solid #000;
@@ -318,7 +338,14 @@ body {
 {
 	outline: none;
 }
-.login-card form .login-btn, .signup-card form .signup-btn, .checkout-card form .checkout-btn, .upload-card form .upload-btn, .logout-btn
+.contact-card form textarea
+{
+	margin: 10px 0;
+	font-size: 16px;
+	padding: 5px;
+	resize: none;
+}
+.login-card form .login-btn, .signup-card form .signup-btn, .checkout-card form .checkout-btn, .upload-card form .upload-btn, .logout-btn, .contact-card form .contact-btn
 {
 	font-weight: bolder;
 	background-color: #fff;
@@ -326,7 +353,7 @@ body {
 	border: 2px solid #E21E2D;
 	padding: 10px;
 }
-.login-card form .login-btn:hover, .signup-card form .signup-btn:hover, .checkout-card form .checkout-btn:hover,  .upload-card form .upload-btn:hover, .logout-btn:hover
+.login-card form .login-btn:hover, .signup-card form .signup-btn:hover, .checkout-card form .checkout-btn:hover,  .upload-card form .upload-btn:hover, .logout-btn:hover, .contact-card form .contact-btn:hover
 {
 	color: #ffffff;
 	background-color: #E21E2D;
@@ -368,6 +395,11 @@ body {
 	border-radius: 30px;
 	color: #fff;
 }
+.container .about-p
+{
+	margin: auto;
+	width: 50%;
+}
 @media screen and (max-width: 600px) 
 {
   .nav-menu a, .nav-menu i, .nav-menu sup {display: none;}
@@ -403,6 +435,11 @@ body {
 .dropdown-content
 {
 	position: relative;
+}
+.container-banner .banner img
+{
+	transform: none;
+	transition: none;
 }
 }
 @media screen and (max-width: 600px)

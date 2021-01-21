@@ -28,6 +28,11 @@
 	$categories = array("shared_meals", "chicken_combos", "boxes", "BR&W", "desserts");
 	$cat_head = array("SHARED MEALS", "CHICKEN COMBOS", "BOXES", "BURGERS, ROLLS & WRAPS", "DESSERTS");
 	?>
+	<div class="container-banner">
+		<div class="banner">
+			<img src="img/banner.png">
+		</div>
+	</div>
 <div class="container">
 	<?php
 	for ($i=0; $i < 5; $i++) { 

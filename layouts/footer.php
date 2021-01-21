@@ -52,7 +52,7 @@
 </div>
 <div class="footer_bottom">
 	<hr>
-	<p>© 2020 My Website Pakistan. All rights reserved.</p>
+	<p>© 2021 RedRooster Pakistan. All rights reserved.</p>
 </div>
 </footer>
 <script type="text/javascript" src="js/external.js"></script>

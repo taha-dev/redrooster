@@ -30,8 +30,8 @@ return $num;
 </div>
 <div class="nav-menu" id="mynav-menu">
 	<ul>
-		<li><a href="#">About Us</a></li>
-		<li><a href="#">Contact</a></li>
+		<li><a href="about.php">About Us</a></li>
+		<li><a href="contact.php">Contact</a></li>
 		<li><a href="dashboard.php">Dashboard</a></li>
         <li><a href="index.php">Home</a></li>
 		<li class="dropdown"><i class="fa fa-shopping-cart cart-ic" onmouseover="getcart()"></i><sup><?php echo cartbadge($conn);?></sup>

@@ -94,6 +94,7 @@ if ($result->num_rows > 0) {
     ?>
     <h1 class="total">YOUR TOTAL: PKR <?php echo $total; ?></h1>
 </div>
+</div>
 <?php
       }
       else
