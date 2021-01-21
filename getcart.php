@@ -1,5 +1,7 @@
 <?php
 include "connection.php";
+if (isset($_SESSION["id"])) {
+
 $user = $_SESSION["id"];
 $sql = "SELECT * FROM cart WHERE user='$user'";
 $result = $conn->query($sql);
@@ -18,5 +20,6 @@ if ($result->num_rows > 0) {
   echo "<div class='checkout-btn-cart'><button onclick='gotocheckout()'>CHECKOUT</button></div>";
 } else {
   echo "<p>&nbsp;No Items in Cart</p>";
+}
 }
 ?>
