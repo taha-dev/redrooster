@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2021 at 01:16 PM
+-- Generation Time: Jan 21, 2021 at 09:41 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -57,7 +57,10 @@ INSERT INTO `orders` (`id`, `user`, `product`, `qty`, `created_at`) VALUES
 (1, 9, 15, 1, '2021-01-20 10:07:14'),
 (2, 9, 14, 2, '2021-01-20 10:07:14'),
 (3, 0, 15, 1, '2021-01-20 21:39:00'),
-(4, 0, 14, 1, '2021-01-20 21:42:00');
+(4, 0, 14, 1, '2021-01-20 21:42:00'),
+(5, 0, 16, 1, '2021-01-21 19:46:55'),
+(6, 11, 15, 1, '2021-01-21 20:27:56'),
+(7, 11, 14, 1, '2021-01-21 20:27:57');
 
 -- --------------------------------------------------------
 
@@ -82,7 +85,9 @@ CREATE TABLE `order_details` (
 INSERT INTO `order_details` (`id`, `user`, `fname`, `lname`, `email`, `phone`, `address`) VALUES
 (1, 9, 'Muhammad', 'Taha', '', 2147483647, 'gulberg 3'),
 (2, 0, 'Muhammad', 'Taha', 'muhammadtaha859@gmail.com', 2147483647, 'gulberg 3'),
-(3, 0, 'Muhammad', 'Taha', 'muhammadtaha859@gmail.com', 2147483647, 'gulberg 3');
+(3, 0, 'Muhammad', 'Taha', 'muhammadtaha859@gmail.com', 2147483647, 'gulberg 3'),
+(4, 0, 'Muhammad', 'Taha', 'muhammadtaha859@gmail.com', 2147483647, 'gulberg 3'),
+(5, 11, 'Muhammad', 'Taha', 'muhammadtaha859@gmail.com', 2147483647, 'gulberg 3');
 
 -- --------------------------------------------------------
 
@@ -156,7 +161,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `fname`, `lname`, `email`, `password`, `phone`, `role`, `created_at`) VALUES
 (9, 'Muhammad', 'Taha', 'muhammadtaha859@gmail.com', '25d55ad283aa400af464c76d713c07ad', '03174010933', 'user', '2021-01-19 22:36:17'),
-(10, 'Muhammad', 'Taha', 'f2018065102@umt.edu.pk', '25d55ad283aa400af464c76d713c07ad', '03174010933', 'admin', '2021-01-19 22:39:30');
+(10, 'Muhammad', 'Taha', 'f2018065102@umt.edu.pk', '25d55ad283aa400af464c76d713c07ad', '03174010933', 'admin', '2021-01-19 22:39:30'),
+(11, 'Mubarra', 'Azam', 'f2018065015@umt.edu.pk', '25d55ad283aa400af464c76d713c07ad', '03174010933', 'user', '2021-01-21 19:42:30'),
+(12, 'Muhammad', 'Taha', 'mtaha2385@gmail.com', '25d55ad283aa400af464c76d713c07ad', '03174010933', 'user', '2021-01-21 20:29:23');
 
 --
 -- Indexes for dumped tables
@@ -200,19 +207,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -224,7 +231,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

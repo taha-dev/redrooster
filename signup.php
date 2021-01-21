@@ -20,6 +20,10 @@
 		{
 			echo "Error: " . $sql . "<br>" . $conn->error;
 		}
+		else
+		{
+			header("location:login.php");
+		}
 		}
 		else
 		{

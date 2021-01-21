@@ -3,7 +3,10 @@ include "connection.php";
 $num = 0;
 function cartbadge($conn) {
     if (session_status() != PHP_SESSION_NONE) {
+    	$uid="";
+    	if (isset($_SESSION["id"])) {
  $uid = $_SESSION["id"];
+}
 $sql = "SELECT COUNT(id) AS NumberOfProducts FROM cart WHERE user='$uid'";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
